@@ -6,10 +6,12 @@ let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 
+
 // Unsplash API
-const count = 30;
-const apiKey = 'config.ACCESS_KEY';
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+let totalImagesToLoad = 30;
+const apiKey = config.ACCESS_KEY;
+let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${totalImagesToLoad}`;
+
 
 // check if all images were loaded
 function imageLoaded(){
@@ -87,7 +89,7 @@ window.addEventListener('scroll', () => {
 
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready){
         ready = false;
-        displayPhotos();
+        getPhotos();
     }
 })
 
