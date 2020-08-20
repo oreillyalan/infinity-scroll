@@ -59,6 +59,17 @@ async function getPhotos () {
     }
 }
 
+//  Scroll Event Listener
+
+window.addEventListener('scroll', () => {
+// total height of browser window + top of page to top of current distance scrolled
+// >=
+// height of everything loaded on the page - 1000 (to trigger the event before bottom)
+
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000){
+
+    }
+})
 
 // On Load
 getPhotos();
